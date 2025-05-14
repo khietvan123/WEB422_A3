@@ -16,6 +16,9 @@ const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv').config();
 
+require('pg'); // explicitly require the "pg" module
+const Sequelize = require('sequelize');
+
 const ListingsDB = require("./modules/listingsDB.js");
 const db = new ListingsDB();
 
@@ -29,6 +32,8 @@ app.get("/",(req,res)=>{
 app.use(cors());
 
 app.use(express.json());
+
+app.use(express.static(__dirname + '/public'));
 
 // POST /api/listings
 app.post("/api/listings", async (req, res) => {
