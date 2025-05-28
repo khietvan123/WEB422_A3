@@ -1,0 +1,7 @@
+#listingsTable tr:hover{
+    cursor:pointer;
+}
+
+#clearForm{
+    margin-left: 2%;
+}
